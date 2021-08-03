@@ -1,7 +1,7 @@
 const w = 400;
 const h = 400;
 const tilesW = 200;
-const maxTicks = 60;
+const maxTicks = 100;
 const tileSize = w/tilesW;
 
 const canvas = document.createElement('canvas');
@@ -40,7 +40,7 @@ function drawFrame() {
         }
     }
 
-    gif.addFrame(canvas, { copy: true });
+    gif.addFrame(canvas, { copy: true, delay: 125 });
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     runTick(conwayGrid, gridCopy);
