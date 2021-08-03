@@ -1,6 +1,6 @@
-const w = 500;
-const h = 500;
-const tilesW = 110;
+const w = 400;
+const h = 400;
+const tilesW = 200;
 const maxTicks = 60;
 const tileSize = w/tilesW;
 
@@ -11,7 +11,7 @@ ctx = canvas.getContext('2d');
 ctx.fillStyle = 'red';
 
 const gif = new GIF({
-    workers: 2,
+    workers: 4,
     quality: 10
 });
 
@@ -100,14 +100,15 @@ gif.on('finished', function (blob) {
 
     const reader = new FileReader();
     reader.readAsDataURL(blob);
+    //scaling up the bg size so we don't need to render quite so much
     reader.onloadend = function () {
         const base64data = reader.result;
         console.log('%c z',
             `
         background-image: url(${base64data});
         color:transparent;
-        background-size: 500px 500px;
-        padding: 500px 500px; 
+        background-size: ${w*1.5}px ${h*1.5}px;
+        padding: ${w*1.5}px ${h*1.5}px; 
         background-size: 100% 100%;
         `
         );
