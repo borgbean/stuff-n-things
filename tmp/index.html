@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    
+    
+    <div id="devices"></div>
+    <button id="ble">do it</button>
+    <button id="start">start</button>
+    <button id="resume">resume</button>
+    <button id="pause">pause</button>
+    <button id="stop">stop</button>
+
+    <input type="range" min="6" max="40" value="6" step="1" class="slider" id="speed" />
+    <input type="range" min="0" max="90" value="0" step="10" class="slider" id="incline" />
+
+
+    <br>
+    <span id="status"></span>
+
+
+    <script type="module" src="/src/ui.ts"></script>
+  </body>
+</html>
